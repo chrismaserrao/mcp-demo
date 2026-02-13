@@ -1,4 +1,4 @@
-from mcp.server.fastmcp import FastMCP
+from fastmcp import FastMCP
 
 mcp = FastMCP("Psychology-Assistant")
 
@@ -58,5 +58,10 @@ def get_medical_disclaimer() -> str:
         "or a crisis hotline immediately."
     )
 
+
 if __name__ == "__main__":
-    mcp.run(transport="sse")
+    mcp.run(
+        transport="sse",
+        host="0.0.0.0",
+        port=8000
+    )
